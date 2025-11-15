@@ -12,7 +12,7 @@
             box-sizing: border-box;
             font-family: 'Poppins', 'Segoe UI', sans-serif;
         }
-        
+       
         :root {
             --primary: #556B2F;
             --primary-light: #6B8E23;
@@ -30,28 +30,28 @@
             --email: #EA4335;
             --phone: #34A853;
         }
-        
+       
         body {
             background: linear-gradient(135deg, #F5F9F0 0%, #E8F0E0 100%);
             color: var(--text);
             line-height: 1.6;
             min-height: 100vh;
         }
-        
+       
         .container {
             max-width: 1400px;
             margin: 0 auto;
             padding: 0 20px;
         }
-        
-        /* Header with Social Media Style Icons */
+       
+        /* Header */
         .main-header {
             position: relative;
             text-align: center;
             padding: 30px 0 20px;
             animation: fadeInDown 1s ease-out;
         }
-        
+       
         .social-icons {
             position: absolute;
             top: 20px;
@@ -59,7 +59,7 @@
             display: flex;
             gap: 12px;
         }
-        
+       
         .social-icon {
             display: flex;
             align-items: center;
@@ -75,7 +75,7 @@
             position: relative;
             overflow: hidden;
         }
-        
+       
         .social-icon:before {
             content: '';
             position: absolute;
@@ -87,44 +87,29 @@
             transform: translateY(100%);
             transition: transform 0.3s ease;
         }
-        
+       
         .social-icon:hover:before {
             transform: translateY(0);
         }
-        
+       
         .social-icon:hover {
             transform: translateY(-3px) scale(1.05);
             box-shadow: 0 6px 20px rgba(0,0,0,0.2);
         }
-        
-        /* Social Media Brand Colors */
-        .social-icon.whatsapp {
-            background: var(--whatsapp);
-        }
-        
-        .social-icon.instagram {
-            background: linear-gradient(45deg, #FCAF45, #E4405F, #833AB4);
-        }
-        
-        .social-icon.etsy {
-            background: var(--etsy);
-        }
-        
-        .social-icon.email {
-            background: var(--email);
-        }
-        
-        .social-icon.phone {
-            background: var(--phone);
-        }
-        
+       
+        .social-icon.whatsapp { background: var(--whatsapp); }
+        .social-icon.instagram { background: linear-gradient(45deg, #FCAF45, #E4405F, #833AB4); }
+        .social-icon.etsy { background: var(--etsy); }
+        .social-icon.email { background: var(--email); }
+        .social-icon.phone { background: var(--phone); }
+       
         .logo-container {
             display: flex;
             align-items: center;
             justify-content: center;
             margin-bottom: 15px;
         }
-        
+       
         .logo {
             width: 80px;
             height: 80px;
@@ -134,26 +119,26 @@
             border: 3px solid var(--primary);
             box-shadow: 0 5px 15px var(--shadow);
         }
-        
+       
         .brand-name {
             font-size: 2.8rem;
             color: var(--primary);
             text-shadow: 1px 1px 3px rgba(0,0,0,0.1);
         }
-        
+       
         .subtitle {
             font-size: 1.2rem;
             color: var(--primary-dark);
             margin-bottom: 20px;
             font-weight: 500;
         }
-        
+       
         .language-toggle {
             display: flex;
             justify-content: center;
             margin-bottom: 30px;
         }
-        
+       
         .lang-btn {
             padding: 12px 25px;
             background: var(--light);
@@ -168,19 +153,19 @@
             align-items: center;
             gap: 8px;
         }
-        
+       
         .lang-btn i {
             font-size: 1.1rem;
         }
-        
+       
         .lang-btn.active {
             background: var(--primary);
             color: white;
             transform: translateY(-3px);
             box-shadow: 0 5px 15px var(--shadow);
         }
-        
-        /* Slider Styles */
+       
+        /* Slider */
         .slider-container {
             position: relative;
             border-radius: 20px;
@@ -190,13 +175,13 @@
             margin-bottom: 40px;
             animation: fadeIn 1s ease-out;
         }
-        
+       
         .slider {
             width: 100%;
             height: 100%;
             position: relative;
         }
-        
+       
         .slide {
             position: absolute;
             top: 0;
@@ -208,11 +193,11 @@
             background-size: cover;
             background-position: center;
         }
-        
+       
         .slide.active {
             opacity: 1;
         }
-        
+       
         .slider-nav {
             position: absolute;
             bottom: 20px;
@@ -222,7 +207,7 @@
             gap: 10px;
             z-index: 10;
         }
-        
+       
         .slider-dot {
             width: 12px;
             height: 12px;
@@ -231,12 +216,12 @@
             cursor: pointer;
             transition: all 0.3s ease;
         }
-        
+       
         .slider-dot.active {
             background: var(--white);
             transform: scale(1.3);
         }
-        
+       
         .slider-arrow {
             position: absolute;
             top: 50%;
@@ -254,28 +239,153 @@
             transition: all 0.3s ease;
             z-index: 10;
         }
-        
+       
         .slider-arrow:hover {
             background: var(--white);
             transform: translateY(-50%) scale(1.1);
         }
-        
-        .slider-arrow.prev {
-            left: 20px;
+       
+        .slider-arrow.prev { left: 20px; }
+        .slider-arrow.next { right: 20px; }
+       
+        /* Product Gallery */
+        .product-gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+            margin: 40px 0;
+            padding: 20px;
+            background: var(--white);
+            border-radius: 20px;
+            box-shadow: 0 10px 30px var(--shadow);
         }
-        
-        .slider-arrow.next {
-            right: 20px;
+
+        .product-item {
+            text-align: center;
+            padding: 20px;
+            border-radius: 15px;
+            background: var(--light);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
         }
-        
-        /* Content Styles */
+
+        .product-item:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 15px 30px rgba(85, 107, 47, 0.2);
+        }
+
+        .product-img {
+            width: 100%;
+            height: 220px;
+            object-fit: cover;
+            border-radius: 12px;
+            margin-bottom: 15px;
+            border: 3px solid var(--primary-light);
+        }
+
+        .product-title {
+            font-size: 1.4rem;
+            color: var(--primary);
+            margin-bottom: 10px;
+            font-weight: 600;
+        }
+
+        .product-price {
+            font-size: 1.3rem;
+            color: var(--primary-dark);
+            font-weight: bold;
+            margin-bottom: 15px;
+        }
+
+        .buy-btn {
+            background: var(--primary);
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            border-radius: 30px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            width: 100%;
+        }
+
+        .buy-btn:hover {
+            background: var(--primary-dark);
+            transform: scale(1.05);
+        }
+
+        /* Order Form */
+        .order-form {
+            background: var(--white);
+            padding: 30px;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px var(--shadow);
+            margin: 40px 0;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            color: var(--primary-dark);
+            font-weight: 500;
+        }
+
+        input, select, textarea {
+            width: 100%;
+            padding: 12px;
+            border: 2px solid var(--secondary-light);
+            border-radius: 12px;
+            font-size: 1rem;
+            transition: border 0.3s ease;
+        }
+
+        input:focus, select:focus, textarea:focus {
+            outline: none;
+            border-color: var(--primary);
+        }
+
+        .submit-btn {
+            background: var(--primary);
+            color: white;
+            padding: 14px 30px;
+            border: none;
+            border-radius: 30px;
+            font-size: 1.1rem;
+            font-weight: bold;
+            cursor: pointer;
+            width: 100%;
+            transition: all 0.3s ease;
+        }
+
+        .submit-btn:hover {
+            background: var(--primary-dark);
+            transform: translateY(-3px);
+        }
+
+        .success-message {
+            background: #d4edda;
+            color: #155724;
+            padding: 15px;
+            border-radius: 10px;
+            margin-top: 20px;
+            display: none;
+            text-align: center;
+            font-weight: 500;
+        }
+
+        /* Content Cards */
         .content-wrapper {
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 30px;
             margin-bottom: 40px;
         }
-        
+       
         .card {
             background: var(--white);
             border-radius: 20px;
@@ -288,7 +398,7 @@
             position: relative;
             overflow: hidden;
         }
-        
+       
         .card:before {
             content: '';
             position: absolute;
@@ -298,15 +408,15 @@
             height: 5px;
             background: linear-gradient(to right, var(--primary), var(--secondary));
         }
-        
+       
         .card:hover {
             transform: translateY(-10px);
             box-shadow: 0 15px 35px rgba(85, 107, 47, 0.2);
         }
-        
+       
         .card:nth-child(1) { animation-delay: 0.2s; }
         .card:nth-child(2) { animation-delay: 0.4s; }
-        
+       
         .card-header {
             display: flex;
             align-items: center;
@@ -314,7 +424,7 @@
             padding-bottom: 15px;
             border-bottom: 2px dashed var(--secondary-light);
         }
-        
+       
         .henna-icon {
             width: 60px;
             height: 60px;
@@ -328,25 +438,25 @@
             font-size: 1.8rem;
             box-shadow: 0 5px 15px var(--shadow);
         }
-        
+       
         .card-title {
             font-size: 1.8rem;
             color: var(--primary);
             font-weight: 600;
         }
-        
+       
         .section {
             margin-bottom: 25px;
             opacity: 0;
             animation: fadeIn 0.8s ease-out forwards;
         }
-        
+       
         .section:nth-child(1) { animation-delay: 0.6s; }
         .section:nth-child(2) { animation-delay: 0.8s; }
         .section:nth-child(3) { animation-delay: 1.0s; }
         .section:nth-child(4) { animation-delay: 1.2s; }
         .section:nth-child(5) { animation-delay: 1.4s; }
-        
+       
         h3 {
             color: var(--primary-dark);
             margin-bottom: 12px;
@@ -354,25 +464,25 @@
             display: flex;
             align-items: center;
         }
-        
+       
         h3:before {
-            content: '✦';
+            content: 'Diamond';
             margin-right: 10px;
             color: var(--primary);
             font-size: 1.5rem;
         }
-        
+       
         ul {
             list-style-type: none;
             padding-left: 5px;
         }
-        
+       
         li {
             margin-bottom: 10px;
             padding-left: 25px;
             position: relative;
         }
-        
+       
         li:before {
             content: '•';
             position: absolute;
@@ -381,23 +491,17 @@
             font-weight: bold;
             font-size: 1.2rem;
         }
-        
-        .emoji-list li:before {
-            content: '';
-        }
-        
-        .emoji {
-            margin-right: 10px;
-            font-size: 1.2rem;
-        }
-        
+       
+        .emoji-list li:before { content: ''; }
+        .emoji { margin-right: 10px; font-size: 1.2rem; }
+       
         .ingredients {
             display: flex;
             flex-wrap: wrap;
             gap: 10px;
             margin-top: 10px;
         }
-        
+       
         .ingredient {
             background: var(--light);
             padding: 8px 15px;
@@ -406,12 +510,12 @@
             border: 1px solid var(--secondary-light);
             transition: all 0.3s ease;
         }
-        
+       
         .ingredient:hover {
             background: var(--accent);
             transform: translateY(-3px);
         }
-        
+       
         .highlight {
             background: linear-gradient(135deg, #F0F5E8, #E8F0E0);
             padding: 20px;
@@ -420,8 +524,8 @@
             margin: 15px 0;
             box-shadow: 0 5px 15px rgba(0,0,0,0.05);
         }
-        
-        /* Footer with Social Media Style */
+       
+        /* Footer */
         .footer {
             background: linear-gradient(135deg, var(--primary), var(--primary-dark));
             color: white;
@@ -432,18 +536,14 @@
             box-shadow: 0 10px 30px rgba(85, 107, 47, 0.3);
             animation: pulse 3s infinite;
         }
-        
+       
         .footer-title {
             font-size: 2rem;
             margin-bottom: 30px;
             color: white;
             text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
         }
-        
-        .footer-title:before {
-            content: none;
-        }
-        
+       
         .footer-contact {
             display: flex;
             flex-wrap: wrap;
@@ -451,7 +551,7 @@
             gap: 25px;
             margin-bottom: 30px;
         }
-        
+       
         .footer-contact-item {
             display: flex;
             flex-direction: column;
@@ -463,12 +563,12 @@
             transition: all 0.3s ease;
             backdrop-filter: blur(5px);
         }
-        
+       
         .footer-contact-item:hover {
             transform: translateY(-5px);
             background: rgba(255,255,255,0.25);
         }
-        
+       
         .footer-contact-icon {
             font-size: 1.8rem;
             margin-bottom: 10px;
@@ -480,18 +580,18 @@
             border-radius: 12px;
             color: white;
         }
-        
+       
         .footer-contact-icon.whatsapp { background: var(--whatsapp); }
         .footer-contact-icon.phone { background: var(--phone); }
         .footer-contact-icon.email { background: var(--email); }
         .footer-contact-icon.etsy { background: var(--etsy); }
-        
+       
         .footer-contact-text {
             font-weight: 500;
             margin-bottom: 5px;
             font-size: 0.9rem;
         }
-        
+       
         .footer-contact-link {
             color: white;
             text-decoration: none;
@@ -499,19 +599,19 @@
             font-weight: 500;
             font-size: 0.9rem;
         }
-        
+       
         .footer-contact-link:hover {
             color: var(--light);
             text-decoration: underline;
         }
-        
+       
         .footer-social {
             display: flex;
             justify-content: center;
             gap: 15px;
             margin-top: 20px;
         }
-        
+       
         .footer-social-icon {
             display: flex;
             align-items: center;
@@ -525,108 +625,44 @@
             text-decoration: none;
             box-shadow: 0 4px 12px rgba(0,0,0,0.15);
         }
-        
+       
         .footer-social-icon:hover {
             transform: scale(1.2) rotate(5deg);
         }
-        
+       
         .footer-social-icon.whatsapp { background: var(--whatsapp); }
         .footer-social-icon.instagram { background: linear-gradient(45deg, #FCAF45, #E4405F, #833AB4); }
         .footer-social-icon.etsy { background: var(--etsy); }
         .footer-social-icon.email { background: var(--email); }
-        
+       
         /* Animations */
-        @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
-        }
-        
-        @keyframes fadeInUp {
-            from { 
-                opacity: 0;
-                transform: translateY(20px);
-            }
-            to { 
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-        
-        @keyframes fadeInDown {
-            from { 
-                opacity: 0;
-                transform: translateY(-20px);
-            }
-            to { 
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-        
-        @keyframes pulse {
-            0% { transform: scale(1); }
-            50% { transform: scale(1.01); }
-            100% { transform: scale(1); }
-        }
-        
-        .floating {
-            animation: floating 3s ease-in-out infinite;
-        }
-        
-        @keyframes floating {
-            0% { transform: translate(0, 0px); }
-            50% { transform: translate(0, 10px); }
-            100% { transform: translate(0, -0px); }
-        }
-        
-        /* Responsive Styles */
+        @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+        @keyframes fadeInUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+        @keyframes fadeInDown { from { opacity: 0; transform: translateY(-20px); } to { opacity: 1; transform: translateY(0); } }
+        @keyframes pulse { 0% { transform: scale(1); } 50% { transform: scale(1.01); } 100% { transform: scale(1); } }
+        .floating { animation: floating 3s ease-in-out infinite; }
+        @keyframes floating { 0% { transform: translate(0, 0px); } 50% { transform: translate(0, 10px); } 100% { transform: translate(0, -0px); } }
+       
+        /* Responsive */
         @media (max-width: 1200px) {
-            .content-wrapper {
-                grid-template-columns: 1fr;
-            }
-            
-            .slider-container {
-                height: 450px;
-            }
+            .content-wrapper { grid-template-columns: 1fr; }
+            .slider-container { height: 450px; }
         }
-        
+       
         @media (max-width: 768px) {
-            .social-icons {
-                position: static;
-                justify-content: center;
-                margin-bottom: 20px;
-                gap: 10px;
-            }
-            
-            .social-icon {
-                width: 40px;
-                height: 40px;
-                font-size: 1.1rem;
-            }
-            
-            .brand-name {
-                font-size: 2.2rem;
-            }
-            
-            .slider-container {
-                height: 350px;
-            }
-            
-            .footer-contact {
-                flex-direction: column;
-                align-items: center;
-            }
-            
-            .footer-contact-item {
-                width: 100%;
-                max-width: 280px;
-            }
+            .social-icons { position: static; justify-content: center; margin-bottom: 20px; gap: 10px; }
+            .social-icon { width: 40px; height: 40px; font-size: 1.1rem; }
+            .brand-name { font-size: 2.2rem; }
+            .slider-container { height: 350px; }
+            .footer-contact { flex-direction: column; align-items: center; }
+            .footer-contact-item { width: 100%; max-width: 280px; }
+            .product-gallery { grid-template-columns: 1fr; }
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <!-- Main Header with Social Media Style Icons -->
+        <!-- Header -->
         <header class="main-header">
             <div class="social-icons">
                 <a href="https://wa.me/4915170661807" target="_blank" class="social-icon whatsapp" title="WhatsApp">
@@ -645,13 +681,13 @@
                     <i class="fas fa-phone"></i>
                 </a>
             </div>
-            
+           
             <div class="logo-container">
                 <img src="https://i.etsystatic.com/57623478/r/isla/e2d0e8/76187425/isla_100x100.76187425_711i2p0r.jpg" alt="Hennaveil Logo" class="logo floating">
                 <h1 class="brand-name">Hennaveil</h1>
             </div>
             <p class="subtitle">100% Natural Handmade Henna - Premium Quality</p>
-            
+           
             <div class="language-toggle">
                 <button class="lang-btn active" data-lang="de">
                     <i class="fas fa-flag"></i> Deutsch
@@ -661,8 +697,8 @@
                 </button>
             </div>
         </header>
-        
-        <!-- Image Slider -->
+       
+        <!-- Slider -->
         <div class="slider-container">
             <div class="slider">
                 <div class="slide active" style="background-image: url('https://raw.githubusercontent.com/nabiledd007/NbPs01/main/f1.jpg');"></div>
@@ -675,14 +711,10 @@
                 <div class="slide" style="background-image: url('https://raw.githubusercontent.com/nabiledd007/NbPs01/main/f8.jpg');"></div>
                 <div class="slide" style="background-image: url('https://raw.githubusercontent.com/nabiledd007/NbPs01/main/f9.jpg');"></div>
             </div>
-            
-            <div class="slider-arrow prev">
-                <i class="fas fa-chevron-left"></i>
-            </div>
-            <div class="slider-arrow next">
-                <i class="fas fa-chevron-right"></i>
-            </div>
-            
+           
+            <div class="slider-arrow prev"><i class="fas fa-chevron-left"></i></div>
+            <div class="slider-arrow next"><i class="fas fa-chevron-right"></i></div>
+           
             <div class="slider-nav">
                 <div class="slider-dot active" data-index="0"></div>
                 <div class="slider-dot" data-index="1"></div>
@@ -695,27 +727,78 @@
                 <div class="slider-dot" data-index="8"></div>
             </div>
         </div>
-        
+
+        <!-- Product Gallery -->
+        <div class="product-gallery">
+            <div class="product-item">
+                <img src="https://raw.githubusercontent.com/nabiledd007/NbPs01/main/f5.jpg" alt="Henna Cone 1" class="product-img">
+                <h3 class="product-title">Premium Henna Cone</h3>
+                <p class="product-price">€12.99</p>
+                <button class="buy-btn" onclick="selectProduct('Premium Henna Cone', '€12.99')">Buy Now</button>
+            </div>
+            <div class="product-item">
+                <img src="https://raw.githubusercontent.com/nabiledd007/NbPs01/main/f6.jpg" alt="Henna Cone 2" class="product-img">
+                <h3 class="product-title">Natural Henna Pack</h3>
+                <p class="product-price">€18.99</p>
+                <button class="buy-btn" onclick="selectProduct('Natural Henna Pack', '€18.99')">Buy Now</button>
+            </div>
+            <div class="product-item">
+                <img src="https://raw.githubusercontent.com/nabiledd007/NbPs01/main/f7.jpg" alt="Henna Cone 3" class="product-img">
+                <h3 class="product-title">Luxury Henna Set</h3>
+                <p class="product-price">€24.99</p>
+                <button class="buy-btn" onclick="selectProduct('Luxury Henna Set', '€24.99')">Buy Now</button>
+            </div>
+        </div>
+
+        <!-- Order Form -->
+        <div class="order-form">
+            <h2 style="text-align: center; color: var(--primary); margin-bottom: 20px;">Place Your Order</h2>
+            <form id="orderForm">
+                <div class="form-group">
+                    <label>Name</label>
+                    <input type="text" id="name" required>
+                </div>
+                <div class="form-group">
+                    <label>Email</label>
+                    <input type="email" id="email" required>
+                </div>
+                <div class="form-group">
+                    <label>Product</label>
+                    <select id="product" required>
+                        <option value="">Select a product</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>Quantity</label>
+                    <input type="number" id="quantity" min="1" value="1" required>
+                </div>
+                <div class="form-group">
+                    <label>Message (Optional)</label>
+                    <textarea id="message" rows="3"></textarea>
+                </div>
+                <button type="submit" class="submit-btn">Send Order</button>
+                <div id="successMessage" class="success-message">
+                    Order sent successfully! We'll contact you soon.
+                </div>
+            </form>
+        </div>
+       
         <!-- Content Cards -->
         <div class="content-wrapper">
             <div class="card">
                 <div class="card-header">
-                    <div class="henna-icon">
-                        <i class="fas fa-leaf"></i>
-                    </div>
+                    <div class="henna-icon"><i class="fas fa-leaf"></i></div>
                     <h2 class="card-title">Gebrauchsanweisung</h2>
                 </div>
-                
                 <div class="section">
                     <h3>Perfekt für:</h3>
                     <ul class="emoji-list">
-                        <li><span class="emoji">💒</span> Hochzeiten</li>
-                        <li><span class="emoji">🎉</span> Festivals & Partys</li>
-                        <li><span class="emoji">🎨</span> Traditionelle & moderne Henna-Kunst</li>
-                        <li><span class="emoji">👩‍🎨</span> Anfänger & Profis</li>
+                        <li><span class="emoji">Wedding</span> Hochzeiten</li>
+                        <li><span class="emoji">Party</span> Festivals & Partys</li>
+                        <li><span class="emoji">Art</span> Traditionelle & moderne Henna-Kunst</li>
+                        <li><span class="emoji">Artist</span> Anfänger & Profis</li>
                     </ul>
                 </div>
-                
                 <div class="section">
                     <h3>Eigenschaften:</h3>
                     <ul>
@@ -725,7 +808,6 @@
                         <li>Satter, dunkler, langanhaltender Farbton</li>
                     </ul>
                 </div>
-                
                 <div class="section">
                     <h3>Zutaten:</h3>
                     <div class="ingredients">
@@ -737,7 +819,6 @@
                         <span class="ingredient">Ätherische Öle</span>
                     </div>
                 </div>
-                
                 <div class="section">
                     <h3>Anwendungstipps:</h3>
                     <div class="highlight">
@@ -747,7 +828,6 @@
                         <p>Haut regelmäßig pflegen für längere Haltbarkeit</p>
                     </div>
                 </div>
-                
                 <div class="section">
                     <h3>Haltbarkeit:</h3>
                     <ul>
@@ -757,25 +837,21 @@
                     </ul>
                 </div>
             </div>
-            
+           
             <div class="card">
                 <div class="card-header">
-                    <div class="henna-icon">
-                        <i class="fas fa-paint-brush"></i>
-                    </div>
+                    <div class="henna-icon"><i class="fas fa-paint-brush"></i></div>
                     <h2 class="card-title">Direction for Use</h2>
                 </div>
-                
                 <div class="section">
                     <h3>Perfect for:</h3>
                     <ul class="emoji-list">
-                        <li><span class="emoji">💒</span> Weddings</li>
-                        <li><span class="emoji">🎉</span> Festivals & Parties</li>
-                        <li><span class="emoji">🎨</span> Traditional & Modern Mehndi Designs</li>
-                        <li><span class="emoji">👩‍🎨</span> Beginners & Professionals</li>
+                        <li><span class="emoji">Wedding</span> Weddings</li>
+                        <li><span class="emoji">Party</span> Festivals & Parties</li>
+                        <li><span class="emoji">Art</span> Traditional & Modern Mehndi Designs</li>
+                        <li><span class="emoji">Artist</span> Beginners & Professionals</li>
                     </ul>
                 </div>
-                
                 <div class="section">
                     <h3>Features:</h3>
                     <ul>
@@ -785,7 +861,6 @@
                         <li>Deep, dark, long-lasting stain</li>
                     </ul>
                 </div>
-                
                 <div class="section">
                     <h3>Ingredients:</h3>
                     <div class="ingredients">
@@ -797,7 +872,6 @@
                         <span class="ingredient">Essential oils</span>
                     </div>
                 </div>
-                
                 <div class="section">
                     <h3>How to Use for Best Results:</h3>
                     <div class="highlight">
@@ -807,7 +881,6 @@
                         <p>Moisturize regularly to extend stain life</p>
                     </div>
                 </div>
-                
                 <div class="section">
                     <h3>Storage:</h3>
                     <ul>
@@ -818,79 +891,53 @@
                 </div>
             </div>
         </div>
-        
+       
         <!-- Footer -->
         <div class="footer">
             <h3 class="footer-title">Kontakt / Contact</h3>
-            
             <div class="footer-contact">
                 <div class="footer-contact-item">
-                    <div class="footer-contact-icon whatsapp">
-                        <i class="fab fa-whatsapp"></i>
-                    </div>
+                    <div class="footer-contact-icon whatsapp"><i class="fab fa-whatsapp"></i></div>
                     <span class="footer-contact-text">WhatsApp</span>
                     <a href="https://wa.me/4915170661807" target="_blank" class="footer-contact-link">+49 151 70661807</a>
                 </div>
-                
                 <div class="footer-contact-item">
-                    <div class="footer-contact-icon phone">
-                        <i class="fas fa-phone"></i>
-                    </div>
+                    <div class="footer-contact-icon phone"><i class="fas fa-phone"></i></div>
                     <span class="footer-contact-text">Telefon / Phone</span>
                     <a href="tel:+4915170661807" class="footer-contact-link">+49 151 70661807</a>
                 </div>
-                
                 <div class="footer-contact-item">
-                    <div class="footer-contact-icon email">
-                        <i class="fas fa-envelope"></i>
-                    </div>
+                    <div class="footer-contact-icon email"><i class="fas fa-envelope"></i></div>
                     <span class="footer-contact-text">E-Mail</span>
                     <a href="mailto:Hennxveil@gmail.com" class="footer-contact-link">Hennxveil@gmail.com</a>
                 </div>
-                
                 <div class="footer-contact-item">
-                    <div class="footer-contact-icon etsy">
-                        <i class="fab fa-etsy"></i>
-                    </div>
+                    <div class="footer-contact-icon etsy"><i class="fab fa-etsy"></i></div>
                     <span class="footer-contact-text">Online Shop</span>
                     <a href="https://www.etsy.com/shop/hennaveil/" target="_blank" class="footer-contact-link">Etsy Shop</a>
                 </div>
             </div>
-            
             <div class="footer-social">
-                <a href="https://wa.me/4915170661807" target="_blank" class="footer-social-icon whatsapp">
-                    <i class="fab fa-whatsapp"></i>
-                </a>
-                <a href="https://www.instagram.com/hennxveil?igsh=MXF1ZG5weWN6djVu" target="_blank" class="footer-social-icon instagram">
-                    <i class="fab fa-instagram"></i>
-                </a>
-                <a href="https://www.etsy.com/shop/hennaveil/" target="_blank" class="footer-social-icon etsy">
-                    <i class="fab fa-etsy"></i>
-                </a>
-                <a href="mailto:Hennxveil@gmail.com" class="footer-social-icon email">
-                    <i class="fas fa-envelope"></i>
-                </a>
+                <a href="https://wa.me/4915170661807" target="_blank" class="footer-social-icon whatsapp"><i class="fab fa-whatsapp"></i></a>
+                <a href="https://www.instagram.com/hennxveil?igsh=MXF1ZG5weWN6djVu" target="_blank" class="footer-social-icon instagram"><i class="fab fa-instagram"></i></a>
+                <a href="https://www.etsy.com/shop/hennaveil/" target="_blank" class="footer-social-icon etsy"><i class="fab fa-etsy"></i></a>
+                <a href="mailto:Hennxveil@gmail.com" class="footer-social-icon email"><i class="fas fa-envelope"></i></a>
             </div>
         </div>
     </div>
 
     <script>
         document.addEventListener('DOMContentLoaded', function() {
-            // Language toggle functionality
+            // Language toggle
             const langButtons = document.querySelectorAll('.lang-btn');
-            const germanCard = document.querySelector('.card:nth-child(1)');
-            const englishCard = document.querySelector('.card:nth-child(2)');
-            
+            const germanCard = document.querySelector('.content-wrapper .card:nth-child(1)');
+            const englishCard = document.querySelector('.content-wrapper .card:nth-child(2)');
+
             langButtons.forEach(button => {
                 button.addEventListener('click', function() {
-                    // Remove active class from all buttons
                     langButtons.forEach(btn => btn.classList.remove('active'));
-                    
-                    // Add active class to clicked button
                     this.classList.add('active');
-                    
                     const lang = this.getAttribute('data-lang');
-                    
                     if (lang === 'de') {
                         germanCard.style.display = 'block';
                         englishCard.style.display = 'block';
@@ -900,59 +947,84 @@
                     }
                 });
             });
-            
-            // Slider functionality
+
+            // Slider
             const slides = document.querySelectorAll('.slide');
             const dots = document.querySelectorAll('.slider-dot');
             const prevBtn = document.querySelector('.slider-arrow.prev');
             const nextBtn = document.querySelector('.slider-arrow.next');
             let currentSlide = 0;
-            
-            // Function to show a specific slide
+
             function showSlide(index) {
-                // Hide all slides
-                slides.forEach(slide => {
-                    slide.classList.remove('active');
-                });
-                
-                // Remove active class from all dots
-                dots.forEach(dot => {
-                    dot.classList.remove('active');
-                });
-                
-                // Show the selected slide
+                slides.forEach(slide => slide.classList.remove('active'));
+                dots.forEach(dot => dot.classList.remove('active'));
                 slides[index].classList.add('active');
                 dots[index].classList.add('active');
-                
                 currentSlide = index;
             }
-            
-            // Next slide function
+
             function nextSlide() {
                 let nextIndex = (currentSlide + 1) % slides.length;
                 showSlide(nextIndex);
             }
-            
-            // Previous slide function
+
             function prevSlide() {
                 let prevIndex = (currentSlide - 1 + slides.length) % slides.length;
                 showSlide(prevIndex);
             }
-            
-            // Event listeners for arrows
+
             nextBtn.addEventListener('click', nextSlide);
             prevBtn.addEventListener('click', prevSlide);
-            
-            // Event listeners for dots
             dots.forEach(dot => {
                 dot.addEventListener('click', function() {
                     let index = parseInt(this.getAttribute('data-index'));
                     showSlide(index);
                 });
             });
-            
-            // Auto slide every 5 seconds
+
             setInterval(nextSlide, 5000);
+
+            // Product Selection
+            window.selectProduct = function(name, price) {
+                const select = document.getElementById('product');
+                let exists = Array.from(select.options).some(opt => opt.value === name);
+                if (!exists) {
+                    select.add(new Option(`${name} - ${price}`, name));
+                }
+                select.value = name;
+                document.getElementById('orderForm').scrollIntoView({ behavior: 'smooth' });
+            };
+
+            // Form Submission
+            document.getElementById('orderForm').addEventListener('submit', function(e) {
+                e.preventDefault();
+
+                const formData = {
+                    name: document.getElementById('name').value,
+                    email: document.getElementById('email').value,
+                    product: document.getElementById('product').value,
+                    quantity: document.getElementById('quantity').value,
+                    message: document.getElementById('message').value,
+                    timestamp: new Date().toLocaleString()
+                };
+
+                // REPLACE THIS URL AFTER DEPLOYING GOOGLE SCRIPT
+                const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbwwyGNEMm4lmouL14q6bKMUr3SnRy6Iumd4zeb6TOXqSNQ5x0vKPay5Rjd4A3jp4YZsKw/exec';
+
+                fetch(SCRIPT_URL, {
+                    method: 'POST',
+                    body: JSON.stringify(formData),
+                    headers: { 'Content-Type': 'text/plain' }
+                })
+                .then(() => {
+                    document.getElementById('successMessage').style.display = 'block';
+                    document.getElementById('orderForm').reset();
+                    setTimeout(() => {
+                        document.getElementById('successMessage').style.display = 'none';
+                    }, 5000);
+                })
+                .catch(() => alert('Error. Please try again.'));
+            });
         });
     </script>
 </body>
